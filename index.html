@@ -30,88 +30,6 @@
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* --- AI WELLNESS HUB EXTRA STYLES --- */
-        .ai-tabs-nav {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 25px;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 10px;
-            overflow-x: auto;
-        }
-
-        .ai-tab-btn {
-            background: none;
-            border: none;
-            padding: 12px 20px;
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: var(--neutral-gray);
-            cursor: pointer;
-            border-radius: 30px;
-            transition: var(--transition);
-            white-space: nowrap;
-        }
-
-        .ai-tab-btn.active {
-            background-color: var(--primary-amber);
-            color: white;
-            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.2);
-        }
-
-        /* Purple/Neon glow style match for interactive active items */
-        .glowing-interactive:focus, .glowing-interactive.active-glow {
-            outline: none;
-            border-color: #a855f7 !important;
-            box-shadow: 0 0 15px rgba(168, 85, 247, 0.4) !important;
-            transition: var(--transition);
-        }
-
-        .chat-container {
-            background: #fdfbf7;
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-md);
-            height: 350px;
-            overflow-y: auto;
-            padding: 20px;
-            margin-bottom: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .chat-bubble {
-            max-width: 80%;
-            padding: 12px 18px;
-            border-radius: 18px;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-
-        .chat-bubble.user {
-            background: var(--primary-amber);
-            color: white;
-            align-self: flex-end;
-            border-bottom-right-radius: 4px;
-        }
-
-        .chat-bubble.ai {
-            background: white;
-            color: var(--neutral-dark);
-            align-self: flex-start;
-            border-bottom-left-radius: 4px;
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .remedy-output-card {
-            background: linear-gradient(135deg, #fffbeb 0%, #fff 100%);
-            border: 1px dashed var(--primary-amber);
-            border-radius: var(--radius-md);
-            padding: 25px;
-            margin-top: 20px;
-        }
-
         /* --- BASE RESET --- */
         * {
             box-sizing: border-box;
@@ -607,6 +525,88 @@
             color: var(--accent-green);
         }
 
+        /* --- AI WELLNESS HUB STYLE TOKENS --- */
+        .ai-tabs-nav {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            overflow-x: auto;
+        }
+
+        .ai-tab-btn {
+            background: none;
+            border: none;
+            padding: 12px 20px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--neutral-gray);
+            cursor: pointer;
+            border-radius: 30px;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .ai-tab-btn.active {
+            background-color: var(--primary-amber);
+            color: white;
+            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.2);
+        }
+
+        /* Purple/Neon glow style match for interactive active items */
+        .glowing-interactive:focus, .glowing-interactive.active-glow {
+            outline: none;
+            border-color: #a855f7 !important;
+            box-shadow: 0 0 15px rgba(168, 85, 247, 0.4) !important;
+            transition: var(--transition);
+        }
+
+        .chat-container {
+            background: #fdfbf7;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            height: 350px;
+            overflow-y: auto;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .chat-bubble {
+            max-width: 80%;
+            padding: 12px 18px;
+            border-radius: 18px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .chat-bubble.user {
+            background: var(--primary-amber);
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+        }
+
+        .chat-bubble.ai {
+            background: white;
+            color: var(--neutral-dark);
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .remedy-output-card {
+            background: linear-gradient(135deg, #fffbeb 0%, #fff 100%);
+            border: 1px dashed var(--primary-amber);
+            border-radius: var(--radius-md);
+            padding: 25px;
+            margin-top: 20px;
+        }
+
         /* --- PACKAGES & PRICING --- */
         .pricing-section {
             padding: 100px 0;
@@ -1041,6 +1041,41 @@
             background-color: #128c7e;
         }
 
+        /* --- ANIMASI LEBAH MENGEKORI TETIKUS --- */
+        .bee-cursor {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 40px;
+            height: 40px;
+            pointer-events: none; /* Supaya lebah tidak mengganggu klik visitor */
+            z-index: 9999;
+            transform: translate3d(-50%, -50%, 0);
+            will-change: transform;
+            transition: transform 0.05s linear;
+        }
+
+        .bee-wing {
+            animation: flap 0.08s infinite alternate ease-in-out;
+        }
+
+        @keyframes flap {
+            0% { transform: scaleY(1); }
+            100% { transform: scaleY(0.2); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .btn-quick-ask:hover {
+            background-color: var(--primary-amber) !important;
+            color: white !important;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+
         /* --- RESPONSIVE BREAKPOINTS --- */
         @media (max-width: 968px) {
             .hero-grid, .problem-grid, .solution-grid, .pricing-grid, .checkout-box, .proof-showcase {
@@ -1073,7 +1108,33 @@
 </head>
 <body>
 
-    <!-- Floating WhatsApp -->
+    <!-- Animasi Lebah Kecil Interaktif (Hanya element ini sahaja yang terapung/berpusing) -->
+    <div id="beeCursor" class="bee-cursor">
+        <svg viewBox="0 0 100 100" width="40" height="40" style="filter: drop-shadow(0px 3px 5px rgba(0,0,0,0.2));">
+            <!-- Sayap Kiri -->
+            <ellipse cx="38" cy="30" rx="10" ry="18" fill="#e0f2fe" opacity="0.8" class="bee-wing" style="transform-origin: 38px 45px;" />
+            <!-- Sayap Kanan -->
+            <ellipse cx="62" cy="30" rx="10" ry="18" fill="#e0f2fe" opacity="0.8" class="bee-wing" style="transform-origin: 62px 45px;" />
+            <!-- Sengat Lebah -->
+            <polygon points="50,85 46,73 54,73" fill="#1e1b18" />
+            <!-- Badan Lebah (Belang Kuning Hitam) -->
+            <ellipse cx="50" cy="52" rx="22" ry="26" fill="#fbbf24" />
+            <!-- Belang Hitam -->
+            <path d="M30 46 Q50 40 70 46" stroke="#1e1b18" stroke-width="5" fill="none" />
+            <path d="M28 54 Q50 48 72 54" stroke="#1e1b18" stroke-width="5" fill="none" />
+            <path d="M30 62 Q50 56 70 62" stroke="#1e1b18" stroke-width="5" fill="none" />
+            <!-- Kepala Lebah -->
+            <circle cx="50" cy="28" r="14" fill="#1e1b18" />
+            <!-- Mata Lebah -->
+            <circle cx="45" cy="24" r="2.5" fill="#ffffff" />
+            <circle cx="55" cy="24" r="2.5" fill="#ffffff" />
+            <!-- Antena Kiri & Kanan -->
+            <path d="M44 18 Q38 10 32 12" stroke="#1e1b18" stroke-width="2" fill="none" stroke-linecap="round" />
+            <path d="M56 18 Q62 10 68 12" stroke="#1e1b18" stroke-width="2" fill="none" stroke-linecap="round" />
+        </svg>
+    </div>
+
+    <!-- Floating WhatsApp (Sempurna dan Ditutup Dengan Betul) -->
     <a href="https://wa.me/60198765432?text=Hai%20HANS%20Madu%20Tualang%20Muar,%20saya%20berminat%20nak%20tanya%20tentang%20madu%20tualang." class="whatsapp-float" target="_blank" aria-label="WhatsApp HANS">
         <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.455L0 24zm6.59-3.951c1.646.976 3.266 1.488 4.887 1.489 5.429 0 9.851-4.381 9.854-9.761.002-2.605-1.002-5.054-2.83-6.885C16.637 3.06 14.19 2.055 11.584 2.055c-5.438 0-9.86 4.382-9.863 9.763-.001 1.774.475 3.508 1.378 5.04l-.999 3.648 3.748-.979zm12.357-6.046c-.332-.166-1.966-.969-2.271-1.08-.304-.11-.526-.166-.747.166-.221.331-.856 1.08-1.05 1.301-.194.222-.388.249-.72.083-.332-.166-1.4-.515-2.667-1.644-.986-.88-1.652-1.968-1.846-2.3-.194-.332-.021-.512.145-.677.15-.148.332-.387.498-.581.166-.193.221-.331.332-.553.111-.221.055-.415-.028-.581-.083-.166-.747-1.8-.1024-2.422-.268-.644-.549-.556-.747-.556-.193-.002-.415-.002-.637-.002-.221 0-.581.083-.885.415-.304.331-1.162 1.135-1.162 2.767 0 1.632 1.19 3.207 1.356 3.428.166.221 2.343 3.578 5.676 5.014.792.341 1.41.546 1.893.7.796.253 1.52.217 2.09.132.636-.095 1.966-.803 2.242-1.577.277-.774.277-1.438.194-1.577-.083-.139-.304-.221-.636-.387z"/></svg>
     </a>
@@ -1266,7 +1327,7 @@
             <div class="section-header text-center" style="margin-bottom: 40px;">
                 <span class="badge" style="background-color: #fef3c7; color: var(--primary-dark);">Pusat Kesihatan Pintar HANS</span>
                 <h2 style="font-size: 2.75rem; margin-bottom: 16px;">AI Honey <span>Wellness Hub</span></h2>
-                <p style="color: #4b5563;">Gunakan kuasa kecerdasan buatan Gemini untuk konsultasi herba peribadi, membongkar mitos madu tiruan, atau menjana remedi kesihatan rumah tersuai secara percuma.</p>
+                <p style="color: #4b5563;">Gunakan kuasa kecerdasan buatan untuk konsultasi herba peribadi, membongkar mitos madu tiruan, atau menjana remedi kesihatan rumah secara percuma.</p>
             </div>
 
             <div class="ai-box" style="background: white; border-radius: var(--radius-lg); border: 2px solid var(--border-color); padding: 40px; box-shadow: var(--shadow-lg);">
@@ -1278,15 +1339,8 @@
                     <button class="ai-tab-btn" onclick="switchAiTab('remedy-tab')">🍵 Pencipta Remedi Rumah</button>
                 </div>
 
-                <!-- API Key Handler Widget (Premium Security Toggle) -->
-                <div style="background: #fdfbf7; padding: 12px 20px; border-radius: 12px; margin-bottom: 25px; display: flex; align-items: center; justify-content: space-between; gap: 15px; border: 1px solid var(--border-color); flex-wrap: wrap;">
-                    <div style="display: flex; align-items: center; gap: 8px;">
-                        <span style="font-size: 1.1rem;">🔑</span>
-                        <span style="font-size: 0.85rem; font-weight: 700; color: #4b5563;">Gemini API Gateway:</span>
-                        <span style="font-size: 0.8rem; background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 4px; font-weight: 700;">Automatik / Manual</span>
-                    </div>
-                    <input type="password" id="geminiApiKey" class="form-input glowing-interactive" placeholder="Masukkan API Key tersendiri (pilihan)" style="margin-bottom: 0; padding: 8px 12px; font-size: 0.85rem; width: 240px; border-radius: 8px; border: 1px solid var(--border-color);">
-                </div>
+                <!-- Hidden input to prevent JS errors after removing the API key gateway UI -->
+                <input type="hidden" id="geminiApiKey" value="">
 
                 <!-- TAB 1: AI Health Advisor (Chat Style) -->
                 <div id="advisor-tab" class="ai-tab-content">
@@ -1397,24 +1451,6 @@
             </div>
         </div>
     </section>
-
-    <!-- CSS Keyframe for Spin & Fade Animation -->
-    <style>
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .btn-quick-ask:hover {
-            background-color: var(--primary-amber) !important;
-            color: white !important;
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-sm);
-        }
-    </style>
 
     <!-- Lab Proof Section -->
     <section class="proof-section">
@@ -1677,7 +1713,7 @@
                         <svg class="faq-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     </div>
                     <div class="faq-answer">
-                        Madu Tualang HANS diuji secara rasmi dan bebas daripada bahan kimia sintetik serta tambahan gula sukrosa. Kami juga mempunyai jaminan pulangan wang 200% jika anda menghantar madu kami ke makmal bertauliah dan membuktikan ianya tiruan.
+                        Madu Tualang HANS diuji secara resmi di makmal bertauliah dan bebas daripada sebarang unsur bahan pengawet sintetik serta pemanis gula tambahan. Kami juga menawarkan jaminan pemulangan wang 200% tanpa ragu jika anda mengesahkan madu kami tidak murni.
                     </div>
                 </div>
 
@@ -1687,7 +1723,7 @@
                         <svg class="faq-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     </div>
                     <div class="faq-answer">
-                        Ya, kerana HANS Madu Tualang adalah madu mentah (raw) asli 100% tanpa sebarang tambahan gula pasir. Namun begitu, pesakit digalakkan untuk mengambil dalam kuantiti sederhana (contoh: 1 sudu kecil sehari) mengikut nasihat doktor.
+                        Madu Tualang tulen tidak mengandungi sukrosa (gula pasir) tambahan, bermakna indeks glisemiknya adalah semulajadi. Sungguhpun begitu, kami tetap menyarankan pesakit untuk merujuk kepada doktor bagi merancang sukatan pengkonsumsian harian yang ideal.
                     </div>
                 </div>
 
@@ -1697,7 +1733,7 @@
                         <svg class="faq-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     </div>
                     <div class="faq-answer">
-                        Bagi tempahan kawasan Bandar Muar, Tanjung Agas, Parit Jawa, dan sekitarnya, kami menyediakan khidmat COD (Cash on Delivery) dalam masa 24 hingga 48 jam hari bekerja selepas pengesahan tempahan.
+                        Penghantaran tunai semasa serah barang (COD) di sekitar parit-parit utama dan pusat bandar Muar biasanya diuruskan dalam tempoh 24 jam selepas tempahan disahkan oleh wakil jualan kami di WhatsApp.
                     </div>
                 </div>
             </div>
@@ -1789,6 +1825,52 @@
 
             // Run initial pricing update
             updateCalculator();
+
+            // --- ANIMASI LOGIK LEBAH MENGEKORI TETIKUS ---
+            const bee = document.getElementById('beeCursor');
+            let mouseX = window.innerWidth / 2;
+            let mouseY = window.innerHeight / 2;
+            let beeX = mouseX;
+            let beeY = mouseY;
+
+            // Kesan terapung (hover float) semasa tetikus diam
+            let wobbleTime = 0;
+
+            // Mengesan posisi tetikus pelanggan
+            document.addEventListener('mousemove', function(e) {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+            });
+
+            // Loop animasi berprestasi tinggi (requestAnimationFrame)
+            function animate() {
+                // Formula Interpolasi Linear (Lerp) untuk kesan pergerakan yang "lembut/smooth"
+                const ease = 0.08; 
+                const dx = mouseX - beeX;
+                const dy = mouseY - beeY;
+
+                beeX += dx * ease;
+                beeY += dy * ease;
+
+                // Tambahkan sedikit wobble (ombak) fizikal menggunakan sine & cosine untuk simulasi terbang
+                wobbleTime += 0.05;
+                const wobbleX = Math.sin(wobbleTime * 1.5) * 4;
+                const wobbleY = Math.cos(wobbleTime * 1.2) * 4;
+
+                // Menentukan arah pusingan lebah (kiri atau kanan) bergantung kepada arah gerakan tetikus
+                let angle = Math.atan2(dy, dx) * (180 / Math.PI);
+                
+                // Tambah offset 90 darjah kerana kepala lebah menghala ke atas dalam SVG asal
+                angle += 90;
+
+                // Kemas kini kedudukan & pusingan lebah dalam skrin
+                bee.style.transform = `translate3d(${beeX + wobbleX}px, ${beeY + wobbleY}px, 0) rotate(${angle}deg)`;
+
+                requestAnimationFrame(animate);
+            }
+            
+            // Lancarkan loop animasi lebah
+            animate();
         });
 
         // --- AI WELLNESS HUB TAB SYSTEM ---
